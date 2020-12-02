@@ -1,0 +1,3 @@
+﻿  List.cpp
+C:\Users\caleb\source\repos\Project6-ExternalIterators\Project6-ExternalIterators\List.cpp(65): error C4700:  uninitialized local variable 'tmpNode' used
+C:\Users\caleb\source\repos\Project6-ExternalIterators\Project6-ExternalIterators\List.cpp(68): error C4700:  uninitialized local variable 'tmp' used

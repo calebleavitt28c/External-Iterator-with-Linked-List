@@ -1,0 +1,82 @@
+NOTES FOR PROJECT 6 EXTERNAL OPERATORS
+
+for (int x : data)
+{
+	cout << x << ", ";
+}
+cout << endl;
+
+
+Our container is going to have a Linked List to work with. So I'm gonna need to get familiar with it. 
+
+Container class will need
+myIterator Begin()
+myIterator End()
+
+myIterator needs
+override : *
+		++
+		!=
+
+		class MyIterator (h)
+		{
+		public:
+			MyIterator(int* data = nullptr, int size = 0, int index = 0);
+			~MyIterator() = default;
+			bool operator!=(const MyIterator& other) 
+			{
+				if (index != other.index) 
+					return true;
+				else
+					return false;
+			}
+			MyIterator operator++() //pre increment
+			{
+				index++;
+				return *this;    //I just returned a dereferenced pointer to the MyIterator class
+			}
+
+
+			 
+			int operator*()
+			{
+				return data[index];
+			}
+
+		private:
+			int* data;
+			int size;
+			int index;
+		}
+
+		(cpp)
+		{
+		MyIterator::MyIterator(int* data, int index)
+		}
+
+
+		class Container
+		{
+		public:
+		Container()
+		{
+		has an array in there 
+		}
+		~Container();
+
+		MyIterator begin() 
+		{
+		return MyIterator(data, 0);
+
+		}
+
+			Myiterator end()
+		{
+			return MyIterator(data, size);
+		}
+
+		private:
+		int* data;
+		int size;
+		}
+
